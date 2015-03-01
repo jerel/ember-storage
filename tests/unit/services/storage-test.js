@@ -49,6 +49,16 @@ test('objects can be set', function(assert) {
   assert.equal(JSON.stringify(service.get('user')), JSON.stringify(user));
 });
 
+test('arrays can be set', function(assert) {
+  var service = this.subject(),
+      friends = [
+        'jenny',
+      ];
+  service.set('friends', friends);
+  assert.equal(window.sessionStorage['test-temp__friends'], JSON.stringify(friends));
+  assert.equal(JSON.stringify(service.get('friends')), JSON.stringify(friends));
+});
+
 test('items set by this service can be cleared', function(assert) {
   assert.expect(1);
   var service = this.subject(),
