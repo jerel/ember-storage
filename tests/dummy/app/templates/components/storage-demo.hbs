@@ -1,0 +1,26 @@
+
+<p>
+  This form remembers everything you type and syncs it between tabs:
+</p>
+
+<form>
+  <div>
+    <label>Name:</label>
+    {{input value=storage.name}}
+  </div>
+
+  <div>
+    <label>Email:</label>
+    {{input value=storage.email}}
+  </div>
+
+  <div>
+    <label>Message:</label>
+    {{textarea value=storage.message}}
+  </div>
+</form>
+
+<div id="spot" style="left:{{storage.mouseX}}px; top:{{storage.mouseY}}px;">
+  <div></div>
+</div>
+

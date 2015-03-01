@@ -1,7 +1,7 @@
 {
   "name": "ember-storage",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.0",
+  "description": "Store data in localStorage or sessionStorage and synchronize it between tabs.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -35,7 +35,12 @@
     "glob": "^4.0.5"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "localStorage",
+    "sessionStorage",
+    "sync",
+    "tab synchronization",
+    "ember"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"

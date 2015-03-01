@@ -1,0 +1,33 @@
+
+body, html {
+  overflow: hidden;
+}
+label {
+  width: 100px;
+  line-height: 60px;
+}
+input, textarea {
+  width: 300px;
+  float: right;
+  margin: 20px;
+}
+textarea {
+  height: 200px;
+}
+div {
+  width: 100%;
+  float: left;
+}
+
+#spot {
+  position:absolute;
+}
+
+#spot div {
+  width:30px;
+  height:30px;
+  background:yellow;
+  opacity:0.4;
+  border-radius:50%;
+  margin: -4px 0 0 -4px;
+}

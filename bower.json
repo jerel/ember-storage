@@ -2,7 +2,7 @@
   "name": "ember-storage",
   "dependencies": {
     "jquery": "^1.11.1",
-    "ember": "1.10.0",
+    "ember": "9a5b0317ce2e5ef141e6793990703a2dd08f2e31",
     "ember-data": "1.0.0-beta.15",
     "ember-resolver": "~0.1.11",
     "loader.js": "ember-cli/loader.js#1.0.1",
@@ -12,5 +12,8 @@
     "ember-qunit": "0.2.8",
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1"
+  },
+  "resolutions": {
+    "ember": "9a5b0317ce2e5ef141e6793990703a2dd08f2e31"
   }
 }
