@@ -1,7 +1,8 @@
 # Ember Storage
 
 A simple but powerful way for managing data that you wish to last through
-a page reload. This add-on synchronizes data between browser tabs and is
+a page reload. This add-on synchronizes data between browser tabs when using
+localStorage and it is
 observable.
 
 [Live Demo](http://storage.jerel.co/)
