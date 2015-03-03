@@ -15,8 +15,12 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Jerel Unruh",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jerel/ember-storage/issues"
+  },
+  "homepage": "http://storage.jerel.co",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
     "ember-cli": "0.2.0-beta.1",
