@@ -5,7 +5,7 @@ var storage = {
   'session': window.sessionStorage,
 };
 
-export default Ember.Object.extend({
+export default Ember.Service.extend({
   prefix: 'es',
   type: 'local',
 
