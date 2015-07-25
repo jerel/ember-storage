@@ -9,7 +9,7 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember test"
+    "test": "ember test --server"
   },
   "repository": "https://github.com/jerel/ember-storage",
   "engines": {
