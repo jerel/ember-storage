@@ -1,6 +1,6 @@
 {
   "name": "ember-storage",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Store data in localStorage or sessionStorage and synchronize it between tabs.",
   "directories": {
     "doc": "doc",
