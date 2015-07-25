@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  trackMouse: function() {
+  style: Ember.computed('storage.mouseX', 'storage.mouseY', function() {
+    const mouseY = this.get('storage.mouseY');
+    const mouseX = this.get('storage.mouseX');
+    return new Ember.Handlebars.SafeString(`left: ${mouseX}px; top: ${mouseY}px`);
+  }),
+  trackMouse: Ember.on('init', function() {
     window.onmousemove = (e) => {
       this.x = e.x+1;
       this.y = e.y+1;
@@ -14,7 +19,7 @@ export default Ember.Component.extend({
     if (window.requestAnimationFrame) {
       this.updateLocation();
     }
-  }.on('init'),
+  }),
   updateLocation: function() {
     if (this.oldX !== this.x || this.oldY !== this.y) {
       this.storage.set('mouseX', this.x);
@@ -28,4 +33,3 @@ export default Ember.Component.extend({
     }
   },
 });
-
