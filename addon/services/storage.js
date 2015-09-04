@@ -18,11 +18,19 @@ export default Ember.Service.extend({
     this._notify = function(evnt) {
       self.notifyPropertyChange(evnt.key.replace(regexp, ''));
     };
-    window.addEventListener('storage', this._notify, false);
+    if ( ! window.addEventListener) {
+      window.attachEvent('storage', this._notify, false);
+    } else {
+      window.addEventListener('storage', this._notify, false);
+    }
   }),
   willDestroy() {
     this._super();
-    window.removeEventListener('storage', this._notify, false);
+    if ( ! window.removeEventListener) {
+      window.detachEvent('storage', this._notify, false);
+    } else {
+      window.removeEventListener('storage', this._notify, false);
+    }
   },
   unknownProperty(k) {
     var key = this._prefix(k),
