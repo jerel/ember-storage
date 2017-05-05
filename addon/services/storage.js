@@ -34,6 +34,13 @@ export default Ember.Service.extend({
     let key = this._prefix(k),
         type = this.get('type');
 
+    // an inelegant solution for behavior introduced in Ember 2.12.0-beta.1
+    // fix introduced in Ember 2.14.0-beta.1
+    //https://github.com/emberjs/ember.js/commit/652adeee2d34c0ae1855612b1d26916eb7c3e40a#diff-83aef7046279fbc5512d665c03bff129
+    if (k.includes('NAME_KEY') || k.includes('OWNER')){
+      return;
+    }
+
     if(Ember.isNone(value)) {
       delete storage[type][key];
     } else {
