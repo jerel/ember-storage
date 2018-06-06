@@ -15,7 +15,7 @@ export default Service.extend({
     return this.get('prefix')+'__'+key;
   },
 
-  didInsertElement() {
+  init() {
     this._super(...arguments);
 
     let self = this,
