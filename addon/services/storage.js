@@ -1,29 +1,38 @@
-import Ember from 'ember';
+import Service from '@ember/service';
+import { isNone } from '@ember/utils';
 
 var storage = {
   'local': window.localStorage,
   'session': window.sessionStorage,
 };
 
-export default Ember.Service.extend({
+export default Service.extend({
+
   prefix: 'es',
   type: 'local',
 
   _prefix(key) {
     return this.get('prefix')+'__'+key;
   },
-  setUpEventListener: Ember.on('init', function() {
+
+  didInsertElement() {
+    this._super(...arguments);
+
     let self = this,
         regexp = new RegExp('^('+this.get('prefix')+'__)');
+
     this._notify = function(evnt) {
       self.notifyPropertyChange(evnt.key.replace(regexp, ''));
     };
+
     window.addEventListener('storage', this._notify, false);
-  }),
+  },
+
   willDestroy() {
-    this._super();
+    this._super(...arguments);
     window.removeEventListener('storage', this._notify, false);
   },
+
   unknownProperty(k) {
     var key = this._prefix(k),
         type = this.get('type');
@@ -34,7 +43,7 @@ export default Ember.Service.extend({
     let key = this._prefix(k),
         type = this.get('type');
 
-    if(Ember.isNone(value)) {
+    if(isNone(value)) {
       delete storage[type][key];
     } else {
       storage[type][key] = JSON.stringify(value);
