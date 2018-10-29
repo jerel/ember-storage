@@ -25,12 +25,17 @@ export default Service.extend({
       self.notifyPropertyChange(evnt.key.replace(regexp, ''));
     };
 
-    window.addEventListener('storage', this._notify, false);
+    if (typeof FastBoot === 'undefined') {
+      window.addEventListener('storage', this._notify, false);
+    }
   },
 
   willDestroy() {
     this._super(...arguments);
-    window.removeEventListener('storage', this._notify, false);
+    
+    if (typeof FastBoot === 'undefined') {
+      window.removeEventListener('storage', this._notify, false);
+    }
   },
 
   unknownProperty(k) {
