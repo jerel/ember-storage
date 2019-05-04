@@ -12,7 +12,7 @@ input, textarea {
   margin: 20px;
 }
 textarea {
-  height: 200px;
+  height: 50px;
 }
 div {
   width: 100%;
@@ -30,4 +30,13 @@ div {
   opacity:0.4;
   border-radius:50%;
   margin: -4px 0 0 -4px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  padding: 5px;
+  border: 1px solid grey;
 }

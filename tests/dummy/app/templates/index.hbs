@@ -4,6 +4,22 @@ around, and fill out the form.
 
 {{storage-demo}}
 
+<div>
+  <b>Storage values</b>
+  <table>
+    <tr>
+      <th>key</th>
+      <th>value</th>
+    </tr>
+    {{#each-in storageValues as |key value|}}
+      <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+      </tr>
+    {{/each-in}}
+  </table>
+</div>
+
 <p>
   <a href="http://github.com/jerel/ember-storage">Download the code</a>
 </p>
